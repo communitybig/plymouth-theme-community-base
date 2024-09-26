@@ -1,13 +1,13 @@
 # Maintainer: Tales A. Mendonça <talesam@gmail.com>
 
-pkgname=pkgbuild-template
-pkgdesc="Package template for Communitybig"
+pkgname=plymouth-theme-community
+pkgdesc="Plymouth theme for Communitybig"
 # Uncomment and edit the following lines as needed
-#depends=('')
+depends=('plymouth')
 #makedepends=('')
 #optdepends=('')
 #conflicts=('')
-#provides=('')
+provides=("$pkgname")
 #replaces=('')
 pkgver=$(date +%y.%m.%d)
 pkgrel=$(date +%H%M)

@@ -1,0 +1,8 @@
+[Plymouth Theme]
+Name=community
+Description=loading BigCommunity animation
+ModuleName=script
+
+[script]
+ImageDir=/usr/share/plymouth/themes/community
+ScriptFile=/usr/share/plymouth/themes/community/animated-boot.script
