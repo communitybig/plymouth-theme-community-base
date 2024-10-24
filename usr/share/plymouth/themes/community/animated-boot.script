@@ -5,7 +5,7 @@ Window.SetBackgroundTopColor (0.1176, 0.1176, 0.1176);
 Window.SetBackgroundBottomColor (0.1176, 0.1176, 0.1176);
 
 # Image animation loop
-for (i = 1; i < 109; i++)  {
+for (i = 1; i < 111; i++)  {  # Mudado para 111 para incluir a imagem 110
     flyingman_image[i] = Image("progress-" + i + ".png");
 }
 
@@ -22,7 +22,7 @@ progress = 1;
 
 fun refresh_callback ()
   {
-    flyingman_sprite.SetImage(flyingman_image[Math.Int(progress / 1.67) % 108 + 1]);
+    flyingman_sprite.SetImage(flyingman_image[Math.Int(progress / 1.7) % 110 + 1]);  # Ajustado para 110 frames e divisor para 1.7
     progress++;
   }
   
