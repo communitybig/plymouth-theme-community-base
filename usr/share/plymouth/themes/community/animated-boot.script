@@ -13,28 +13,16 @@ for (i = 1; i < 109; i++)  {
 
 flyingman_sprite = Sprite();
 
-# Inicialmente esconde o sprite (opacidade 0)
-flyingman_sprite.SetOpacity(0);
-
 #Place in the center
 flyingman_sprite.SetX(Window.GetWidth() / 2 - flyingman_image[1].GetWidth() / 2); 
 flyingman_sprite.SetY(Window.GetHeight() / 2 - flyingman_image[1].GetHeight() / 2);
 
 progress = 1;
-start_animation = 0;
 
 fun refresh_callback ()
   {
-    # Só começa a animação depois que o Plymouth estiver totalmente carregado
-    if (Plymouth.GetMode() == "boot" && start_animation == 0) {
-        start_animation = 1;
-        flyingman_sprite.SetOpacity(1);
-    }
-    
-    if (start_animation) {
-        flyingman_sprite.SetImage(flyingman_image[Math.Int(progress / 1.67) % 108 + 1]);
-        progress++;
-    }
+    flyingman_sprite.SetImage(flyingman_image[Math.Int(progress / 1.67) % 108 + 1]);
+    progress++;
   }
   
 Plymouth.SetRefreshFunction (refresh_callback);
