@@ -5,7 +5,7 @@ Window.SetBackgroundTopColor (0.1176, 0.1176, 0.1176);
 Window.SetBackgroundBottomColor (0.1176, 0.1176, 0.1176);
 
 # Image animation loop
-for (i = 1; i < 27; i++)
+for (i = 1; i < 109; i++)  # 108 imagens
   flyingman_image[i] = Image("progress-" + i + ".png");
 flyingman_sprite = Sprite();
 
@@ -17,7 +17,9 @@ progress = 1;
 
 fun refresh_callback ()
   {
-    flyingman_sprite.SetImage(flyingman_image[Math.Int(progress / 6) % 27]);
+    # Plymouth roda a ~60fps, precisamos de 36fps para 108 frames em 3 segundos
+    # Então atualizamos a cada ~1.67 refreshes (60/36 ≈ 1.67)
+    flyingman_sprite.SetImage(flyingman_image[Math.Int(progress / 1.67) % 108 + 1]);
     progress++;
   }
   
