@@ -3,7 +3,7 @@
 pkgname=plymouth-theme-community
 pkgdesc="Plymouth theme for Communitybig"
 # Uncomment and edit the following lines as needed
-depends=('plymouth' 'glib2-devel')
+depends=('plymouth')
 #makedepends=('')
 #optdepends=('')
 #conflicts=('')
