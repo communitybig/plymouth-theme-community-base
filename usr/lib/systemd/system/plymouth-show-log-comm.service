@@ -5,7 +5,7 @@ After=systemd-journal-flush.service
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/plymouth-show-log
+ExecStart=/usr/bin/plymouth-show-log-comm
 RemainAfterExit=yes
 
 [Install]
