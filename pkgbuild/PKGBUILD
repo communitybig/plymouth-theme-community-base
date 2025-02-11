@@ -38,7 +38,7 @@ package() {
 	done
 
   # Sobrescreve o arquivo plymouthd.conf com a versão do pacote
-  cp -f "$srcdir/plymouthd.conf.big" "$pkgdir/etc/plymouth/plymouthd.conf"
+  cp -f "$srcdir/etc/plymouthd.conf.big" "$pkgdir/etc/plymouth/plymouthd.conf"
 
 	# Install license file if present
 	if [ -f "LICENSE" ]; then
