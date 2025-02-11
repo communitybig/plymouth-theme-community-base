@@ -13,6 +13,10 @@
 
 # Function executed after package installation
 post_install() {
+
+  # Sobrescreve o arquivo plymouthd.conf com a versão do pacote
+  cp -f "/etc/plymouthd.conf.big" "/etc/plymouth/plymouthd.conf"
+
 	# add plymouth to mkinitcpio
 	if ! grep -q plymouth /etc/mkinitcpio.conf; then
 		sed -i '/HOOKS=/s/"/"plymouth /' /etc/mkinitcpio.conf
