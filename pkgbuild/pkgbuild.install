@@ -1,21 +1,11 @@
-# Installation file for Arch Linux packages
-# This file contains scripts that are executed at different stages of package installation/upgrade/removal
+#!/usr/bin/env bash
+# -*- coding: utf-8 -*-
+# shellcheck shell=bash disable=SC1091,SC2039,SC2166
 
-# Function executed before package installation
-# pre_install() {
-#     echo "Preparing to install the package..."
-# Example: Check for system dependencies
-# if ! command -v required_command &> /dev/null; then
-#     echo "Error: required_command not found. Please install it before continuing."
-#     exit 1
-# fi
-# }
-
-# Function executed after package installation
 post_install() {
-
-  # Sobrescreve o arquivo plymouthd.conf com a versão do pacote
-  cp -f "/etc/plymouthd.conf.big" "/etc/plymouth/plymouthd.conf"
+	# Sobrescreve o arquivo plymouthd.conf com a versão do pacote
+	cp -f /etc/plymouthd.conf     /etc/plymouth/plymouthd.pacnew
+	cp -f /etc/plymouthd.conf.big /etc/plymouth/plymouthd.conf
 
 	# add plymouth to mkinitcpio
 	if ! grep -q plymouth /etc/mkinitcpio.conf; then
