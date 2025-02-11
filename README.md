@@ -1,3 +1,3 @@
-# pkgbuild-template
+# plymouth-theme-community-base
 
-Package description
+Plymouth theme for Communitybig Base
