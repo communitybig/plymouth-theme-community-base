@@ -19,24 +19,6 @@ elif [ -e "pkgbuild.install" ]; then
 	install=pkgbuild.install
 fi
 
-prepare() {
-	cd "${srcdir}/${pkgname}"
-	# Add any preparation steps here, if needed
-	# For example: patch -p1 < "${srcdir}/patch-file.patch"
-}
-
-build() {
-	cd "${srcdir}/${pkgname}"
-	# Add build steps here, if needed
-	# For example: make
-}
-
-check() {
-	cd "${srcdir}/${pkgname}"
-	# Add check/test steps here, if needed
-	# For example: make check
-}
-
 package() {
 	cd "${srcdir}/${pkgname}"
 
@@ -54,6 +36,9 @@ package() {
 			cp -a "${srcdir}/${dir}" "${pkgdir}/"
 		fi
 	done
+
+  # Sobrescreve o arquivo plymouthd.conf com a versão do pacote
+  cp -f "$srcdir/plymouthd.conf.big" "$pkgdir/etc/plymouth/plymouthd.conf"
 
 	# Install license file if present
 	if [ -f "LICENSE" ]; then
